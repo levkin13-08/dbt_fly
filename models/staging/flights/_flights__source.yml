@@ -1,0 +1,70 @@
+sources:
+  - name: demo_src
+    description: Данные из БД по авиаперелетам 
+    tables:
+      - name: aircrafts
+        description: Модели самолетов
+        columns:
+          - name: aircraft_code
+            description: >
+              Код модели самолета.
+              Состоит из 3-х латинских букв
+            tests:
+              - not_null
+              - unique
+          - name: model
+            description: Название модели самолета
+          - name: range
+      - name: aircrafts_data
+        description: Модели самолетов (Json)
+        columns:
+          - name: aircraft_code
+            description: >
+              Код модели самолета.
+              Состоит из 3-х латинских букв
+            tests:
+              - not_null
+              - unique
+          - name: model
+            description: Название модели самолета
+          - name: range
+      - name: airports
+        description: Аэропорты
+        columns:
+          - name: airport_code
+            description: Код аэропорта
+          - name: airport_name
+            description: Название аэрпорта
+          - name: city
+            description: Город аэропорта
+          - name: coordinates
+            description: Координаты аэропорта
+          - name: timezone
+            description: Тайм-зона       
+      - name: airports_data
+      - name: boarding_passes
+        description: Места в полете
+        columns:
+          - name: ticket_no
+            description: Номер билета
+          - name: flight_id
+            description: Номер полета
+          - name: boarding_no
+            description: номер места
+          - name: seat_no
+            description: Название места
+      - name: bookings
+      - name: flights
+      - name: flights_v
+      - name: routes
+      - name: seats
+        description: Места в самолетах
+        columns:
+          - name: aircraft_code
+            description: Код модели самолета
+          - name: seat_no
+            description: Номер места
+          - name: fare_conditions
+            description: Тип места
+      - name: ticket_flights
+      - name: tickets
